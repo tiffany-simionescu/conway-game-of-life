@@ -45,12 +45,15 @@ class GameOfLife(Frame):
 		self.build_grid()
 
 ### About this Algorithm 
-		# about_algorithm_title = Label(self.title_frame, text = "About this Algorithm", font = self.titleFont)
-		# about_algorithm_title.pack(side = BOTTOM)
+		self.algo_frame = Frame(self.main_frame)
+		self.algo_frame.grid(row = 4, column = 0, columnspan = 4)
 
-		# about_algorithm = Label(self.title_frame, text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-		# font = self.descriptionFont)
-		# about_algorithm.pack(side = BOTTOM)
+		about_algorithm_title = Label(self.algo_frame, text = "About this Algorithm", font = self.titleFont)
+		about_algorithm_title.pack(side = TOP)
+
+		about_algorithm = Label(self.algo_frame, text = "Lorem ipsum ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris\nnisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit\nin voluptate velit esse cillum dolore eu fugiat\nnulla pariatur. Excepteur sint occaecat cupidatat\nnon proident, sunt in culpa qui officia\ndeserunt mollit anim id est laborum",
+		font = self.descriptionFont)
+		about_algorithm.pack(side = BOTTOM)
 
 		# Buttons
 		### Reformat buttons
