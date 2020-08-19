@@ -1,12 +1,20 @@
 from tkinter import *
 from tkinter import font
 import time
+import webbrowser
 
-# Add Pause functionality
-# Create 4 presets
-# Add About this Algorithm below grid (talk about the founder, turing-completeness, etc)
+# Add Pause functionality - can update during pause
+# Update About this Algorithm below grid (talk about the founder, turing-completeness, etc)
+		# link1 = Label(root, text="Google Hyperlink", fg="blue", cursor="hand2")
+		# link1.pack()
+		# link1.bind("<Button-1>", lambda e: callback("http://www.google.com"))
 # Add rules to the right of the grid
 # Add Generation of Cells to the top of the grid
+
+### Custom Features ###
+# Create 4 presets
+# a random cell configuration button
+# Add additional cell properties, like color or size, and incorporate them into your visualization
 
 class GameOfLife(Frame):
 
@@ -51,9 +59,19 @@ class GameOfLife(Frame):
 		about_algorithm_title = Label(self.algo_frame, text = "About this Algorithm", font = self.titleFont)
 		about_algorithm_title.pack(side = TOP)
 
-		about_algorithm = Label(self.algo_frame, text = "Lorem ipsum ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris\nnisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit\nin voluptate velit esse cillum dolore eu fugiat\nnulla pariatur. Excepteur sint occaecat cupidatat\nnon proident, sunt in culpa qui officia\ndeserunt mollit anim id est laborum",
+		prompt = Label(self.algo_frame, text = "To learn more about this algorithm and how it works, click the About button!", 
 		font = self.descriptionFont)
-		about_algorithm.pack(side = BOTTOM)
+		prompt.pack()
+
+		# About the Algorithm section
+		# Update about.html
+		url = "about.html"
+		new = 1
+		def open_about():
+			webbrowser.open(url,new=new)
+
+		Btn = Button(self.algo_frame, text = "About", command = open_about)
+		Btn.pack(side = BOTTOM)
 
 		# Buttons
 		### Reformat buttons
