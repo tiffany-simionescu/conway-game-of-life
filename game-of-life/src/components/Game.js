@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 // change to less later
 import '../style/Game.css';
+import { preset1 } from './presets/preset1';
+import { preset2 } from './presets/preset2';
+import { preset3 } from './presets/preset3';
 
 const cell_size = 20;
 const width = 800;
@@ -175,24 +178,33 @@ class Game extends Component {
 
   // Preset 1
   preset1 = () => {
-    let cells = [[1, 1], [1, 2], [1, 3]];
     for (let y = 0; y < this.rows; y++) {
       for (let x = 0; x < this.cols; x++) {
-        this.board[y][x] = 20;
+        this.board[y][x] = preset1[y][x];
       }
     }
     this.setState({ cells: this.makeCells() });
   }
-  //   let cells = [[1, 1], [1, 2], [1, 3]];
-  //   for (let y = 0; y < this.rows; y++) {
-  //     for (let x = 0; x < this.cols; x++) {
-  //       if (this.board[y][x]) {
-  //         cells.push({ x, y });
-  //       }
-  //     }
-  //   }
-  //   return cells;
-  // }
+
+  // Preset 2
+  preset2 = () => {
+    for (let y = 0; y < this.rows; y++) {
+      for (let x = 0; x < this.cols; x++) {
+        this.board[y][x] = preset2[y][x];
+      }
+    }
+    this.setState({ cells: this.makeCells() });
+  }
+
+  // Presets 3
+  preset3 = () => {
+    for (let y = 0; y < this.rows; y++) {
+      for (let x = 0; x < this.cols; x++) {
+        this.board[y][x] = preset3[y][x];
+      }
+    }
+    this.setState({ cells: this.makeCells() });
+  }
   
   render() {
     const { cells, isRunning, interval } = this.state;
@@ -216,6 +228,8 @@ class Game extends Component {
           }
           <button className="button" onClick={this.handleRandom}>Random</button>
           <button className="button" onClick={this.preset1}>Preset 1</button>
+          <button className="button" onClick={this.preset2}>Preset 2</button>
+          <button className="button" onClick={this.preset3}>Preset 3</button>
           <button className="button" onClick={this.handleClear}>Clear</button>
         </div>
       </div>
