@@ -5,10 +5,7 @@ import webbrowser
 
 # Add Pause functionality - can update during pause
 # Update About this Algorithm below grid (talk about the founder, turing-completeness, etc)
-		# link1 = Label(root, text="Google Hyperlink", fg="blue", cursor="hand2")
-		# link1.pack()
-		# link1.bind("<Button-1>", lambda e: callback("http://www.google.com"))
-# Add rules to the right of the grid
+# Add rules to the right of the grid - Eventually add to about.html (react app)
 # Add Generation of Cells to the top of the grid
 
 ### Custom Features ###
@@ -28,6 +25,7 @@ class GameOfLife(Frame):
 		self.vertical_size = 25
 		self.cells = []
 		self.generate_next = True
+		self.pause = True
 
 		self.init_UI()
 
@@ -52,6 +50,25 @@ class GameOfLife(Frame):
 		# creates grid
 		self.build_grid()
 
+		# Game Rules
+		self.rule_frame = Frame(self.main_frame)
+		self.rule_frame.grid(row = 2, column = 3, columnspan = 4)
+
+		rule_title = Label(self.rule_frame, text = "Rules", font = self.titleFont)
+		rule_title.pack()
+
+		rule_step_1 = Label(self.rule_frame, text = "1. This is rule one",
+		font = self.descriptionFont)
+		rule_step_1.pack()
+
+		rule_step_2 = Label(self.rule_frame, text = "2. This is rule two",
+		font = self.descriptionFont)
+		rule_step_2.pack()
+
+		rule_step_3 = Label(self.rule_frame, text = "3. This is rule three",
+		font = self.descriptionFont)
+		rule_step_3.pack()
+
 ### About this Algorithm 
 		self.algo_frame = Frame(self.main_frame)
 		self.algo_frame.grid(row = 4, column = 0, columnspan = 4)
@@ -63,7 +80,7 @@ class GameOfLife(Frame):
 		font = self.descriptionFont)
 		prompt.pack()
 
-		# About the Algorithm section
+		# About the Algorithm Button
 		# Update about.html
 		url = "about.html"
 		new = 1
@@ -73,12 +90,12 @@ class GameOfLife(Frame):
 		Btn = Button(self.algo_frame, text = "About", command = open_about)
 		Btn.pack(side = BOTTOM)
 
-		# Buttons
+		# Top Buttons
 		### Reformat buttons
 		self.play_button = Button(self.main_frame, text = "Play", command = self.start_game)
 		self.play_button.grid(row = 1, column = 1, sticky = W)
 
-		self.pause_button = Button(self.main_frame, text = "Pause", command = self.pause_game)
+		self.pause_button = Button(self.main_frame, text = "Pause", state = DISABLED, command = self.pause_game)
 		self.pause_button.grid(row = 1, column = 2, sticky = W)
 
 		self.stop_button = Button(self.main_frame, text = "Stop", state = DISABLED, command = self.stop_game)
@@ -118,6 +135,7 @@ class GameOfLife(Frame):
 		for coord in buttons_to_toggle:
 			self.cell_toggle(self.cells[coord[0]][coord[1]])			
 
+		# if self.generate_next:
 		if self.generate_next:
 			self.after(100, self.start_game)
 		else:
@@ -132,6 +150,7 @@ class GameOfLife(Frame):
 
 			self.stop_button.configure(state = NORMAL)
 			self.play_button.configure(state = DISABLED)
+			self.pause_button.configure(state = NORMAL)
 
 	def enable_buttons(self):
 		# resets game
@@ -142,7 +161,10 @@ class GameOfLife(Frame):
 
 		self.stop_button.configure(state = DISABLED)
 		self.play_button.configure(state = NORMAL)
+		self.pause_button.configure(state = NORMAL)
 		self.generate_next = True
+		# Might need to change this
+		self.pause = False
 
 	def neighbor_count(self, x_coord, y_coord):
 		count = 0
@@ -165,7 +187,8 @@ class GameOfLife(Frame):
 
 	### Pause Button
 	def pause_game(self):
-		pass
+		# Might need to change this
+		self.pause = False
 
   # Stop button
 	def stop_game(self):
