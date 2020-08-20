@@ -27,6 +27,7 @@ class Game extends Component {
     cells: [],
     interval: 100,
     isRunning: false,
+    generationCount: 1
   }
 
   makeEmptyBoard() {
@@ -59,6 +60,8 @@ class Game extends Component {
     const doc = document.documentElement;
 
     return {
+      // x: (rect.left + window.pageXOffset) - doc.clientLeft,
+      // y: (rect.top + window.pageYOffset) - doc.clientTop,
       x: (rect.left + window.pageXOffset) - doc.clientLeft,
       y: (rect.top + window.pageYOffset) - doc.clientTop,
     };
@@ -68,16 +71,17 @@ class Game extends Component {
   handleClick = e => {
     const elemOffset = this.getElementOffset();
 
+    // const offsetX = e.clientX - elemOffset.x;
+    // const offsetY = e.clientY - elemOffset.y;
     const offsetX = e.clientX - elemOffset.x;
     const offsetY = e.clientY - elemOffset.y;
 
     const x = Math.floor(offsetX/cell_size);
     const y = Math.floor(offsetY/cell_size);
 
-    if (x >= 0 && x <= this.cols && y >= 0 && y <= this.rows) {
+    if (this.state.isRunning === false && x >= 0 && x <= this.cols && y >= 0 && y <= this.rows) {
       this.board[y][x] = !this.board[y][x];
     }
-
     this.setState({ cells: this.makeCells() });
   }
 
@@ -117,6 +121,7 @@ class Game extends Component {
           }
         }
       }
+      // this.state.generationCount++
     }
 
     this.board = newBoard;
@@ -126,6 +131,7 @@ class Game extends Component {
 
     this.timeoutHandler = window.setTimeout(() => {
       this.runIteration();
+      this.state.generationCount++
     }, this.state.interval);
   }
 
@@ -149,6 +155,44 @@ class Game extends Component {
       interval: e.target.value
     });
   }
+
+  // Random Cells
+  handleRandom = () => {
+    for (let y = 0; y < this.rows; y++) {
+      for (let x = 0; x < this.cols; x++) {
+        this.board[y][x] = (Math.random() >= 0.5);
+      }
+    }
+    this.setState({ cells: this.makeCells() });
+  }
+
+  // Clear Cells
+  handleClear = () => {
+    this.board = this.makeEmptyBoard();
+    this.state.generationCount = 1;
+    this.setState({ cells: this.makeCells() });
+  }
+
+  // Preset 1
+  preset1 = () => {
+    let cells = [[1, 1], [1, 2], [1, 3]];
+    for (let y = 0; y < this.rows; y++) {
+      for (let x = 0; x < this.cols; x++) {
+        this.board[y][x] = 20;
+      }
+    }
+    this.setState({ cells: this.makeCells() });
+  }
+  //   let cells = [[1, 1], [1, 2], [1, 3]];
+  //   for (let y = 0; y < this.rows; y++) {
+  //     for (let x = 0; x < this.cols; x++) {
+  //       if (this.board[y][x]) {
+  //         cells.push({ x, y });
+  //       }
+  //     }
+  //   }
+  //   return cells;
+  // }
   
   render() {
     const { cells, isRunning, interval } = this.state;
@@ -163,11 +207,16 @@ class Game extends Component {
           )})}
         </div>
         <div className="controls">
+          Generation # {this.state.generationCount} <br />
           Update every <input value={interval} onChange={this.handleIntervalChange} /> msec
           {isRunning ? (
             <button className="button" onClick={this.stopGame}>Stop</button>
               ) : (
-            <button className="button" onClick={this.runGame}>Run</button>)}
+            <button className="button" onClick={this.runGame}>Run</button>)
+          }
+          <button className="button" onClick={this.handleRandom}>Random</button>
+          <button className="button" onClick={this.preset1}>Preset 1</button>
+          <button className="button" onClick={this.handleClear}>Clear</button>
         </div>
       </div>
     )
