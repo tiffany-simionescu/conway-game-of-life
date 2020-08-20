@@ -24,7 +24,9 @@ class Game extends Component {
   }
 
   state = {
-    cells: []
+    cells: [],
+    interval: 100,
+    isRunning: false,
   }
 
   makeEmptyBoard() {
@@ -78,9 +80,27 @@ class Game extends Component {
 
     this.setState({ cells: this.makeCells() });
   }
+
+  runGame() {
+    this.setState({ 
+      isRunning: true 
+    });
+  }
+
+  stopGame() {
+    this.setState({ 
+      isRunning: false 
+    });
+  }
+
+  handleIntervalChange = e => {
+    this.setState({
+      interval: e.target.value
+    });
+  }
   
   render() {
-    const { cells } = this.state;
+    const { cells, isRunning, interval } = this.state;
 
     return (
       <div>
@@ -89,6 +109,13 @@ class Game extends Component {
             return (
             <Cell x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`} />
           )})}
+        </div>
+        <div className="controls">
+          Update every <input value={interval} onChange={this.handleIntervalChange} /> msec
+          {isRunning ? (
+            <button className="button" onClick={this.stopGame}>Stop</button>
+              ) : (
+            <button className="button" onClick={this.runGame}>Run</button>)}
         </div>
       </div>
     )
