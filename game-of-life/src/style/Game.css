@@ -4,16 +4,16 @@
   align-items: center;
 }
 
-.board {  
-  position: relative;  
-  margin: 0 auto;  
-  background-color: #000;
-  background-image:
-        linear-gradient(#333 1px, transparent 1px),
-        linear-gradient(90deg, #333 1px, transparent 1px);
-}
-
 .cell {  
   background: #ccc;  
   position: absolute;
+}
+
+.board {
+  position: relative;  
+  margin: 0 auto;  
+  background-color: rgb(95, 23, 89);
+  background-image:
+        linear-gradient(rgb(158, 41, 148) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(158, 41, 148) 1px, transparent 1px);
 }
