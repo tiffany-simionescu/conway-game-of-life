@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../style/Game.css';
+import Cell from './Cell';
 import { preset1 } from './presets/preset1';
 import { preset2 } from './presets/preset2';
 import { preset3 } from './presets/preset3';
@@ -10,22 +11,6 @@ import About from './About';
 const cell_size = 20;
 const width = 800;
 const height = 600;
-
-class Cell extends Component {
-  render() {
-    const { x, y } = this.props;
-
-    return (
-      <div className="cell" style={{ 
-        left: `${cell_size * x + 1}px`, 
-        top: `${cell_size * y + 1}px`,
-        width: `${cell_size - 1}px`, 
-        height: `${cell_size - 1}px`
-        }} 
-      />
-    )
-  }
-}
 class Game extends Component {
   constructor() {
     super();
@@ -275,7 +260,7 @@ class Game extends Component {
         </div>
 
         <div className="rightside">
-          <Rules />
+          {/* <Rules /> */}
           <About />
         </div>
       </div>
@@ -285,6 +270,6 @@ class Game extends Component {
 
 export default Game;
 
-// add link to rules
-// create an about component
-// add link to about
+// Styling
+// Update About Section
+// Update for responsive layout
