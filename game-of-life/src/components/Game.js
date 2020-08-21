@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../style/Game.css';
 import Cell from './Cell';
+import Menu from './Menu';
 import { preset1 } from './presets/preset1';
 import { preset2 } from './presets/preset2';
 import { preset3 } from './presets/preset3';
@@ -261,7 +262,9 @@ class Game extends Component {
 
         <div className="rightside">
           {/* <Rules /> */}
-          <About />
+          {/* <About /> */}
+          <Menu />
+
         </div>
       </div>
     )

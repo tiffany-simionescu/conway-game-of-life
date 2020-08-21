@@ -5,13 +5,13 @@ import Rules from './Rules';
 const About = () => {
   return (
     <div className="about">
-      <h1>About:</h1>
+      {/* <h1>About:</h1> */}
       <p>
         The Game of Life is a cellular automaton originally 
         created by John Horton Conway in 1970. This game is played
         on a 2D grid of cells. Each cell can either be alive or dead.
         There are 4 rules that determine if a cell is alive or dead:
-        <Rules />
+        {/* <Rules /> */}
         To learn more about Conway's Game of Life, visit 
         <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">
           Wikipedia
