@@ -4,6 +4,9 @@ import { preset1 } from './presets/preset1';
 import { preset2 } from './presets/preset2';
 import { preset3 } from './presets/preset3';
 
+import Rules from './Rules';
+import About from './About';
+
 const cell_size = 20;
 const width = 800;
 const height = 600;
@@ -35,7 +38,7 @@ class Game extends Component {
     cells: [],
     interval: 100,
     isRunning: false,
-    generationCount: 1,
+    generationCount: 0,
     boardColor: true
   }
 
@@ -189,8 +192,11 @@ class Game extends Component {
   // Clear Cells
   handleClear = () => {
     this.board = this.makeEmptyBoard();
-    this.state.generationCount = 1;
-    this.setState({ cells: this.makeCells() });
+    this.state.generationCount = 0;
+    
+    this.setState({ 
+      cells: this.makeCells(),
+    });
   }
 
   // Preset 1
@@ -231,21 +237,23 @@ class Game extends Component {
 
     return (
       <div className="main-div">
-        <h1>Conway's Game of Life</h1>
+        <div className="title-board">
+          <h1>Conway's Game of Life</h1>
 
-        <div className="board" style={{ 
-            width: width, 
-            height: height, 
-            backgroundSize: `${cell_size}px ${cell_size}px`
-          }} 
-          onClick={this.handleClick} 
-          ref={e => {this.boardRef = e;
-        }}>
+          <div className="board" style={{ 
+              width: width, 
+              height: height, 
+              backgroundSize: `${cell_size}px ${cell_size}px`
+            }} 
+            onClick={this.handleClick} 
+            ref={e => {this.boardRef = e;
+          }}>
 
-          {cells.map(cell => {
-            return (
-            <Cell x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`} />
-          )})}
+            {cells.map(cell => {
+              return (
+              <Cell x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`} />
+            )})}
+          </div>
         </div>
         
         {/* Finish Styling */}
@@ -259,12 +267,16 @@ class Game extends Component {
               ) : (
             <button className="button" onClick={this.runGame}>Run</button>)
           }
-          
-          <button className="button" onClick={this.handleRandom}>Random</button>
-          <button className="button" onClick={this.preset1}>Preset 1</button>
-          <button className="button" onClick={this.preset2}>Preset 2</button>
-          <button className="button" onClick={this.preset3}>Preset 3</button>
           <button className="button" onClick={this.handleClear}>Clear</button>
+          <button className="button" onClick={isRunning ? '' : this.handleRandom}>Random</button>
+          <button className="button" onClick={isRunning ? '' : this.preset1}>Preset 1</button>
+          <button className="button" onClick={isRunning ? '' : this.preset2}>Preset 2</button>
+          <button className="button" onClick={isRunning ? '' : this.preset3}>Preset 3</button>
+        </div>
+
+        <div className="rightside">
+          <Rules />
+          <About />
         </div>
       </div>
     )
@@ -272,3 +284,7 @@ class Game extends Component {
 }
 
 export default Game;
+
+// add link to rules
+// create an about component
+// add link to about

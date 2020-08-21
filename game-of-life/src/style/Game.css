@@ -1,19 +1,45 @@
 .main-div {
   display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  background-color: rgb(206, 203, 203);
+}
+
+.title-board {
+  display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .cell {  
-  background: #ccc;  
+  background: rgb(199, 209, 110);  
   position: absolute;
 }
 
 .board {
   position: relative;  
   margin: 0 auto;  
+  /* border: 2px solid black; */
   background-color: rgb(95, 23, 89);
   background-image:
         linear-gradient(rgb(158, 41, 148) 1px, transparent 1px),
         linear-gradient(90deg, rgb(158, 41, 148) 1px, transparent 1px);
+}
+
+.rules, .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  margin: 10px auto;
+  width: 100px;
+
 }
