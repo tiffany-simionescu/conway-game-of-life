@@ -3,7 +3,11 @@
   /* flex-direction: column; */
   align-items: center;
   /* background-color: rgb(178, 202, 209); */
-  background-color: #90cccc;
+  background-image:
+  linear-gradient(rgba(143, 204, 204, 0.5),rgba(6, 36, 116, 0.5)),
+  url("https://images.pexels.com/photos/2756406/pexels-photo-2756406.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-position-y: center;
+  /* background-color: rgba(143, 204, 204, 0.9); */
 }
 
 .title-board {
