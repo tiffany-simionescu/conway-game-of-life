@@ -53,17 +53,45 @@
 
 .about a {
   margin-left: 5px;
+  color: white;
+}
+
+.about a:hover {
+  color: rgb(216, 173, 241);
 }
 
 .controls {
+  background: linear-gradient(#000, #062474);
+  color: #90cccc;
   display: flex;
   flex-direction: column;
+  font-weight: bold;
+  width: 150px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: -65px;
+  margin-left: 20px;
+}
+
+.controls input {
+  width: 100px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.controls p {
+  margin-top: 0px;
 }
 
 .button {
   margin: 10px auto;
   width: 100px;
+}
 
+.button:hover {
+  background-color: rgb(148, 147, 147);
+  color: #062474;
 }
 
 h1 {

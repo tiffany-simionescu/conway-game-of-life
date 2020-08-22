@@ -2,11 +2,12 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const menuStyles = makeStyles(theme => ({
   root: {
-    height: "100vh",
+    // height: "100vh",
     // // float: "right",
     // position: "absolute",
     // right: "0"
     // backgroundColor: "black"
+    // top: "-500px"
 
   },
   // aboutMenu: {
@@ -25,13 +26,13 @@ export const menuStyles = makeStyles(theme => ({
   ruleMenu: {
     marginTop: "-1%",
     width: "250px",
-    height: "100vh",
+    // height: "100vh",
     backgroundColor: "lightgrey",
     position: "fixed",
     left: "84%"
   },
   accordionType: {
-    height: "60vh"
+    // height: "60vh"
   },
   // heading: {
   //   fontSize: theme.typography.pxToRem(15),
@@ -55,13 +56,14 @@ export const menuStyles = makeStyles(theme => ({
     // // float: "left"
     // // position: "absolute",
     // right: "0"
-    marginTop: "-1%",
+    // marginTop: "-1%",
     width: "350px",
     // height: "100vh",
     // backgroundColor: "lightgrey",
     // backgroundColor: "black",
     position: "relative",
-    left: "25%"
+    left: "25%",
+    marginTop: "-25%"
   },
   innerMenu: {
     // background: linear-gradient(#062474, #000);

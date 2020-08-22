@@ -244,9 +244,9 @@ class Game extends Component {
         
         {/* Finish Styling */}
         <div className="controls">
-          Generation # {this.state.generationCount} <br />
+          <p>Generation # {this.state.generationCount}</p> <br />
 
-          Update every <input value={interval} onChange={this.handleIntervalChange} /> msec
+          <p>Update every<br /><input value={interval} onChange={this.handleIntervalChange} /><br /> msec</p>
 
           {isRunning ? (
             <button className="button" onClick={this.stopGame}>Stop</button>
