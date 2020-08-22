@@ -6,9 +6,6 @@ import { preset1 } from './presets/preset1';
 import { preset2 } from './presets/preset2';
 import { preset3 } from './presets/preset3';
 
-import Rules from './Rules';
-import About from './About';
-
 const cell_size = 20;
 const width = 800;
 const height = 600;
@@ -178,7 +175,8 @@ class Game extends Component {
   // Clear Cells
   handleClear = () => {
     this.board = this.makeEmptyBoard();
-    this.state.generationCount = 0;
+    // this.state.generationCount = 0;
+    this.setState({ generationCount: 0 })
     
     this.setState({ 
       cells: this.makeCells(),
@@ -261,10 +259,7 @@ class Game extends Component {
         </div>
 
         <div className="rightside">
-          {/* <Rules /> */}
-          {/* <About /> */}
           <Menu />
-
         </div>
       </div>
     )
@@ -272,7 +267,3 @@ class Game extends Component {
 }
 
 export default Game;
-
-// Styling
-// Update About Section
-// Update for responsive layout

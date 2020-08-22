@@ -1,13 +1,10 @@
 .main-div {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
-  /* background-color: rgb(178, 202, 209); */
   background-image:
   linear-gradient(rgba(143, 204, 204, 0.5),rgba(6, 36, 116, 0.5)),
   url("https://images.pexels.com/photos/2756406/pexels-photo-2756406.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-position-y: center;
-  /* background-color: rgba(143, 204, 204, 0.9); */
 }
 
 .title-board {
@@ -18,9 +15,7 @@
 }
 
 .cell {  
-  /* background: rgb(199, 209, 110);   */
   background: #039595;
-  /* background: #062474; */
   position: absolute;
 }
 
@@ -28,17 +23,6 @@
   position: relative;  
   margin: 0 auto;  
   border-radius: 5px;
-  /* border: 2px solid black; */
-  /* background-color: rgb(95, 23, 89);
-  background-image:
-        linear-gradient(rgb(158, 41, 148) 1px, transparent 1px),
-        linear-gradient(90deg, rgb(158, 41, 148) 1px, transparent 1px); */
-
-  /* background-color: #062474;
-  background-image:
-        linear-gradient(#2d4b96 1px, transparent 1px),
-        linear-gradient(90deg, #2d4b96 1px, transparent 1px); */
-
   background-color: #000;
   background-image:
         linear-gradient(#2d4b96 1px, transparent 1px),
@@ -95,14 +79,10 @@
 }
 
 h1 {
-  /* background-color: #062474; */
-  /* background: linear-gradient(#062474, #000); */
   background: linear-gradient(#000, #062474);
   color: #90cccc;
   padding: 10px;
   margin-top: 10px;
-  /* border: 2px solid #039595; */
-  /* box-shadow:#039595; */
   border-radius: 10px;
   box-shadow: 5px 10px 18px darkslategray;
 }
