@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/conway-game-of-life/static/css/main.4451a55f.chunk.css",
+    "main.js": "/conway-game-of-life/static/js/main.401c1930.chunk.js",
+    "main.js.map": "/conway-game-of-life/static/js/main.401c1930.chunk.js.map",
+    "runtime-main.js": "/conway-game-of-life/static/js/runtime-main.8cbe773b.js",
+    "runtime-main.js.map": "/conway-game-of-life/static/js/runtime-main.8cbe773b.js.map",
+    "static/js/2.acd6da9d.chunk.js": "/conway-game-of-life/static/js/2.acd6da9d.chunk.js",
+    "static/js/2.acd6da9d.chunk.js.map": "/conway-game-of-life/static/js/2.acd6da9d.chunk.js.map",
+    "index.html": "/conway-game-of-life/index.html",
+    "precache-manifest.2d7aa33c49971b9535cf658f93041829.js": "/conway-game-of-life/precache-manifest.2d7aa33c49971b9535cf658f93041829.js",
+    "service-worker.js": "/conway-game-of-life/service-worker.js",
+    "static/css/main.4451a55f.chunk.css.map": "/conway-game-of-life/static/css/main.4451a55f.chunk.css.map",
+    "static/js/2.acd6da9d.chunk.js.LICENSE.txt": "/conway-game-of-life/static/js/2.acd6da9d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8cbe773b.js",
+    "static/js/2.acd6da9d.chunk.js",
+    "static/css/main.4451a55f.chunk.css",
+    "static/js/main.401c1930.chunk.js"
+  ]
+}
