@@ -63,7 +63,7 @@ export default function Menu() {
     <div className={classes.aboutMenu}>
       <Accordion className={classes.innerMenu} square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>About</Typography>
+          <Typography style={{ fontWeight: "bold" }}>About</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -74,7 +74,7 @@ export default function Menu() {
       </Accordion>
       <Accordion className={classes.innerMenu} square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Rules</Typography>
+          <Typography style={{ fontWeight: "bold" }}>Rules</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
