@@ -16,6 +16,25 @@ The algorithm implements the following rules to visually showcase Conway's Game 
 
 4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction. 
 
+## Tech used?
+
+- React
+- Material UI
+
+## How to use?
+
+- You can create your own cell patterns or use the pre-programmed buttons to see Conway's Game of Life in action.
+
+- Once you have the pattern selected, click Run.
+
+- The game keeps track of how many Generations it takes to get to its current pattern.
+
+- If you wish for the cells and Generation to stop, click the stop button
+
+- If you wish to start over, click the clear button.
+
+- For more information about the game, please view the left-side panels
+
 ## Exceptional difficulties and solutions, if any.
 
 The only difficulty I ran into was getting the Generation count to stop once the cell automaton finished.
